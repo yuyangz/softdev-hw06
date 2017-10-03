@@ -15,9 +15,9 @@ app = Flask(__name__)
 def form():
     return render_template('form.html')
 
-@app.route("/results")
+@app.route("/end")
 def results():
-     dictionary = request.form
+     dictionary = request.args
      method_returned = request.method
      return render_template("results.html", username=dictionary["username"], method = method_returned)
 
