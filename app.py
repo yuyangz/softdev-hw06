@@ -15,10 +15,10 @@ app = Flask(__name__)
 def form():
     return render_template('form.html')
 
-@app.route("/end")
+@app.route("/end") #results of the form
 def results():
-     dictionary = request.args
-     method_returned = request.method
+     dictionary = request.args #immutable multidict of the query string
+     method_returned = request.method #retrieves method 
      return render_template("results.html", username=dictionary["username"], method = method_returned)
 
 if __name__ == "__main__":
